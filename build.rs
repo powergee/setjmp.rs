@@ -23,7 +23,7 @@ fn main() {
         // we only want these two type definitions
         .allowlist_type("jmp_buf")
         .allowlist_type("sigjmp_buf")
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()
         .expect("Unable to generate bindings");
 
